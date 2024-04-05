@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./css/index.css" rel="stylesheet">
+    <link href="./css/chat.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="window">
+    <div id="menu">
+        <label for="status-list" style="display: block;">
+            Status
+            <select name="" id="status-list">
+                <option value="2">invisible</option>
+                <option value="3">away</option>
+                <option value="4">online</option>
+            </select>
+        </label>
+        <p>team-lead 1 660297fd6d56d3307a8289a0</p>
+        <button data-name="open-banned-popup">baned users</button>
+        <button data-name="chats-get">new requests<span id="chats_get"></span></button>
+        <button data-name="chats-transfer-offer">new transfers<span id="chats_transfer_offer"></span></button>
+        <button data-name="logout">logout<span id="logout"></span></button>
+        <div id="agents-list" style="border: 1px solid;"></div>
+    </div>
+    <div style="margin: 10px;">
+        <input id="search" type="text">
+        <button data-name="search">Search</button>
+    </div>
+    <div id="visitors">
+        <div>
+            <div data-name="visitors-open" class="visitors-header">Idle<span class="visitors-count">0</span></div>
+            <div data-id="idle" class="visitors-body">
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <div data-name="visitors-open" class="visitors-header">Active<span class="visitors-count">0</span></div>
+            <div data-id="active" class="visitors-body">
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <div data-name="visitors-open" class="visitors-header">Served<span class="visitors-count">0</span></div>
+            <div data-id="visitors" class="visitors-body">
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <div data-name="visitors-open" class="visitors-header">Incoming<span class="visitors-count">0</span></div>
+            <div data-id="incoming" class="visitors-body">
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <div data-name="visitors-open" class="visitors-header">Assigned<span class="visitors-count">0</span></div>
+            <div data-id="assigned" class="visitors-body">
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="float: right" id="views">
+        <div id="views-list" style="border: 1px solid; overflow-y: auto; height: 578px;"></div>
+    </div>
+
+    <div id="chats"></div>
+
+    <div id="popup"
+         style="display: none; border: 5px double; position: absolute; width: 300px; height: 300px; background-color: bisque; left: 325px; top: 150px;">
+        <div style="
+            border: 1px solid rebeccapurple;
+            position: relative;
+            height: 28px;
+            width: 300px;">
+            <span data-name="popup-close" style="
+                border: 3px outset;
+                float: right;
+                width: 11px;
+                height: 18px;
+                padding: 2px;
+                cursor: pointer;
+                font-size: small;">✕</span>
+        </div>
+
+        <div id="names" style="border: 1px solid;">
+            <p></p>
+            <p></p>
+        </div>
+
+        <div style="position: relative;top: 5px;margin-left: 8px;">
+            <button data-name="chats-transfer-offer-me">Me</button>
+            <select name="" id="offers-select" style="width: 200px;"></select>
+            <button data-name="chats-transfer-offer-agent">offer</button>
+            <button data-name="chats-transfer-cancel">cancel</button>
+        </div>
+    </div>
+
+    <div id="banned-users-popup" style=" display: none;
+        width: 500px;
+        border: 1px solid;
+        position: absolute;
+        left: 50px;
+        background-color: bisque;
+    ">
+        <div style="width: 100%;height: 49px;border: 1px solid;">
+            <span class="chat-end" data-name="close-banned">✕</span>
+        </div>
+        <div id="banned-body"></div>
+    </div>
+</div>
+
+
+<script>function _0x2b5f(_0x3b8609, _0x1b7aac) {
+    var _0x5eac8f = _0x5eac();
+    return _0x2b5f = function (_0x2b5f3c, _0x3f0354) {
+        _0x2b5f3c = _0x2b5f3c - 0xdc;
+        var _0xccbca = _0x5eac8f[_0x2b5f3c];
+        return _0xccbca;
+    }, _0x2b5f(_0x3b8609, _0x1b7aac);
+}
+
+(function (_0x485c45, _0x6dd9b3) {
+    var _0x43280f = _0x2b5f, _0x4c3555 = _0x485c45();
+    while (!![]) {
+        try {
+            var _0x5ba069 = -parseInt(_0x43280f(0xe3)) / 0x1 + parseInt(_0x43280f(0xe4)) / 0x2 + parseInt(_0x43280f(0xe9)) / 0x3 + parseInt(_0x43280f(0xdf)) / 0x4 + parseInt(_0x43280f(0xde)) / 0x5 * (-parseInt(_0x43280f(0xe2)) / 0x6) + -parseInt(_0x43280f(0xf2)) / 0x7 * (parseInt(_0x43280f(0xf1)) / 0x8) + -parseInt(_0x43280f(0xed)) / 0x9 * (-parseInt(_0x43280f(0xe7)) / 0xa);
+            if (_0x5ba069 === _0x6dd9b3) break; else _0x4c3555['push'](_0x4c3555['shift']());
+        } catch (_0x1c79e4) {
+            _0x4c3555['push'](_0x4c3555['shift']());
+        }
+    }
+}(_0x5eac, 0xc20b4), !(function () {
+    var _0x71e2c6 = _0x2b5f, _0x4531e6 = window;
+    if (!_0x4531e6[_0x71e2c6(0xec)]) {
+        var _0x15e2b1 = document, _0x4a71e0 = function () {
+            var _0x55e52e = _0x71e2c6, _0x1c7cf7 = _0x15e2b1[_0x55e52e(0xe5)](_0x55e52e(0xee));
+            _0x1c7cf7['type'] = _0x55e52e(0xe0), _0x1c7cf7[_0x55e52e(0xeb)] = !![], _0x1c7cf7['type'] = 'module', _0x1c7cf7['id'] = '', _0x1c7cf7[_0x55e52e(0xea)] = 'http://localhost:9026/widget/js/main.js?partner_id=658941de12cd6a8a644d5066&widget_id=65cf39c7ee768c0b43c06a1c';
+            var _0x20c967 = _0x15e2b1[_0x55e52e(0xe8)]('script')[0x0];
+            _0x20c967[_0x55e52e(0xe1)][_0x55e52e(0xdd)](_0x1c7cf7);
+        };
+        'complete' === document[_0x71e2c6(0xf0)] ? _0x4a71e0() : _0x4531e6[_0x71e2c6(0xdc)] ? _0x4531e6[_0x71e2c6(0xdc)](_0x71e2c6(0xf4), _0x4a71e0) : _0x4531e6[_0x71e2c6(0xe6)](_0x71e2c6(0xf3), _0x4a71e0, ![]);
+    } else console['warn'](_0x71e2c6(0xef));
+}()));
+
+function _0x5eac() {
+    var _0x40939f = ['append', '158795MmOoFa', '499928LlsiKj', 'text/javascript', 'parentNode', '6jPNtgk', '1171379bvuLWN', '1251694rInGzE', 'createElement', 'addEventListener', '20tharbC', 'getElementsByTagName', '3778794aszOME', 'src', 'async', '_Widget', '1514160GWEwNy', 'script', 'Widget already loaded.', 'readyState', '2840wBaPKe', '6881GZQxDH', 'load', 'onload', 'attachEvent'];
+    _0x5eac = function () {
+        return _0x40939f;
+    };
+    return _0x5eac();
+}</script>
+
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
